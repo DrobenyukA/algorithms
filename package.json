@@ -1,0 +1,30 @@
+{
+  "name": "algorithms",
+  "version": "1.0.0",
+  "description": "Algorithms in JS",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "JavaScript",
+    "Algorithms"
+  ],
+  "author": "Drobenyuk.A",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.3.1",
+    "babel-jest": "^24.0.0",
+    "jest": "^24.0.0"
+  },
+  "jest": {
+    "verbose": true,
+    "moduleFileExtensions": [
+      "js"
+    ],
+    "transform": {
+      "^.+\\.js?$": "babel-jest"
+    }
+  }
+}
