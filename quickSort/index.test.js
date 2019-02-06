@@ -3,10 +3,10 @@ import { quickSort, partition } from '.';
 describe('Quick sort', () => {
     const arrToSort = [9, 8, 7, 6, 5, 4, 3, 2, 1];
 
-    it('Should correctly partition the list', () => {
-        const list = [6, 3, 1, 2, 8, 7];
-        partition(list, 0, 2);
-        expect(list).toEqual([3, 2, 1, 6, 8, 7]);
+    it('Should correctly partition the list according first item', () => {
+        const list = [6, 1, 3, 2, 8, 7];
+        partition(list, 0, list.length - 1);
+        expect(list).toEqual([2, 1, 3, 6, 8, 7]);
     });
 
     it('Should sort array in correct order', () => {

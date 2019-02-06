@@ -1,27 +1,55 @@
-export function partition(list, left, right) {
-    let pivot = list[left];
+// TODO: made performance test in browser
+
+export function another_partition(list, left, right) {
+    const pivot = list[left];
     let pointer = 'right';
-    do {
+
+    while (left !== right) {
+        
         if (pointer === 'right') {
             if (list[right] < pivot) {
                 list[left] = list[right];
-                left += 1;
+                left = left + 1;
                 pointer = 'left';
             } else {
-                right -= 1;
+                right = right - 1;
             }
         } else if (pointer === 'left') {
             if (list[left] > pivot) {
                 list[right] = list[left];
-                right -= 1;
+                right = right - 1;
                 pointer = 'right';
             } else {
-                left += 1;
+                left = left + 1;
             }
         }
 
-    } while (left !== right);
+    };
+
     list[left] = pivot;
+    return left;
+}
+
+export function partition(list, left, right) {
+    const pivot = list[left];
+   
+    while (left !== right) {
+
+        while ((list[right] > pivot) && (left !== right)) {
+            --right;
+        }
+        
+        list[left] = list[right];
+
+        while ((list[left] < pivot) && (left !== right)) {
+            ++left;
+        }
+
+        list[right] = list[left];
+    }
+
+    list[left] = pivot;
+
     return left;
 }
 
