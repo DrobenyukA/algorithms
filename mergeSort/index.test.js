@@ -17,6 +17,9 @@ describe('merge sort', () => {
     });
 
     it('Should split list into two lists half by half', () => {
-        
+        expect(splitList([0,1,2,3,4])).toEqual({
+            left: [0,1,2,],
+            right: [3,4]
+        });
     })
 });
